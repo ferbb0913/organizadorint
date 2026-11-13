@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="main">
+    <div class="center">
+        <section class="notes" id="notes">
+            <div class="alignbutton"><button class="add" onclick="createn('note')">+</button></div>
+    <div class="note">
+        <input type="text" maxlength="30">
+        <textarea ></textarea>
+    </div>
+    </section>
+<section class="check" id="check">
+    <div class="alignbutton"><button class="add" onclick="createn('check')">+</button></div>
+    <div class="checkarea"><input type="checkbox"><input type="text"></div>
+</section>
+    </div>
+    </div>
+    <script>
+function createn(type){
+if(type === "note"){
+    const note = document.createElement("div")
+    note.className = "note"
+    const title = document.createElement("input")
+    title.type = "text"
+    title.maxLength=30
+    const content = document.createElement("textarea")
+    document.getElementById("notes").appendChild(note)
+    note.appendChild(title)
+    note.appendChild(content)
+}else if (type=== "check"){
+const check = document.createElement("div")
+check.className = "checkarea"
+const checkbox = document.createElement("input")
+checkbox.type = "checkbox"
+const name = document.createElement("input")
+name.type = "text"
+
+    document.getElementById("check").appendChild(check)
+    check.appendChild(checkbox)
+    check.appendChild(name)
+}
+}
+</script>
+</body>
+</html>
